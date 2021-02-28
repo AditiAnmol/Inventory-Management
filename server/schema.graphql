@@ -8,7 +8,7 @@ enum CategoryType {
 
 type Product {
   id: Int!
-  category: String!
+  category: CategoryType!
   price: Float
   name: String!
   image: String
