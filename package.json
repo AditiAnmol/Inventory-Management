@@ -1,0 +1,34 @@
+{
+  "name": "assignment-3",
+  "version": "1.0.0",
+  "description": "PRO MERN STACK ASSIGNMENT THREE - SIMPLE INVENTORY MANAGEMENT SYSTEM WITH EXPRESS & GRAPHQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -w server -e js,graphql server/server.js",
+    "compile": "babel src --out-dir public",
+    "watch": "babel src --out-dir public --watch --verbose",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AditiAnmol/assignment-3.git"
+  },
+  "author": "aditi.jeni@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AditiAnmol/assignment-3/issues"
+  },
+  "homepage": "https://github.com/AditiAnmol/assignment-3#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.3.0",
+    "express": "^4.17.1",
+    "graphql": "^0.13.2",
+    "nodemon": "^1.19.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0"
+  }
+}
