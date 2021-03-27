@@ -89,8 +89,8 @@ class ProductAdd extends React.Component {
             </tr>
             <tr>
               <td>
-                <select id="productcategory" name="productCategory" className="inputs">
-                  <option value="" disabled selected>Choose Category</option>
+                <select id="productcategory" name="productCategory" className="inputs" defaultValue="">
+                  <option value="" disabled >Choose Category</option>
                   <option value="Shirts">Shirts</option>
                   <option value="Jeans">Jeans</option>
                   <option value="Jackets">Jackets</option>
