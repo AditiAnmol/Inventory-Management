@@ -1,8 +1,8 @@
 #CS649
 
-#Assignment 4
+#Assignment 5
 
-Building on the previous assignment by taking advantage of MongoDB and other tools. Eliminating the array-based storage of the application and instead, creating a new MongoDB database and collection. Reconfiguring the inventory management application to begin creating data within and retrieving data from the MongoDB database.
+In this assignment, you will again build on your previous assignment. In this assignment you will focus on routing and adding update and delete APIs to your application.
 
 Steps to setup and start the project
 
