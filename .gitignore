@@ -1,4 +1,4 @@
 node_modules
 package-lock.json
-vendor.bundle.js
-app.bundle.js
+ui/public/*.js
+ui/public/*.map
