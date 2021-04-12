@@ -1,5 +1,5 @@
 {
-  "name": "assignment-4-ui",
+  "name": "assignment-5-ui",
   "version": "1.0.0",
   "description": "UI server setup for inventory management app - REACT & EXPRESS",
   "main": "index.js",
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AditiAnmol/assignment-4.git"
+    "url": "git+https://github.com/AditiAnmol/assignment-5.git"
   },
   "author": "aditi.jeni@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AditiAnmol/assignment-4/issues"
+    "url": "https://github.com/AditiAnmol/assignment-5/issues"
   },
-  "homepage": "https://github.com/AditiAnmol/assignment-4#readme",
+  "homepage": "https://github.com/AditiAnmol/assignment-5#readme",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "dotenv": "^6.2.0",
@@ -30,7 +30,10 @@
     "nodemon": "^1.19.4",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "react-router-dom": "^4.3.1",
+    "url-search-params": "^1.1.0",
+    "whatwg-fetch": "^3.6.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

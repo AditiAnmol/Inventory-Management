@@ -8,9 +8,12 @@ const product = require('./product');
 const resolvers = {
   Query: {
     productList: product.list,
+    product: product.get,
   },
   Mutation: {
     productAdd: product.add,
+    productUpdate: product.update,
+    productDelete: product.delete,
   },
 };
 

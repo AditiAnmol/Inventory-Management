@@ -1,19 +1,33 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
-function ProductRow(props) {
-  const { product } = props;
-  return (
+const ProductRow = withRouter(({ product, deleteProduct, index }) => (
+  <>
     <tr>
       <td>{product.name}</td>
       <td>{product.price ? `$${product.price}` : ''}</td>
       <td>{product.category}</td>
-      <td>{product.image ? <a href={product.image} target="_blank" rel="noreferrer">Link</a> : ''}</td>
+      <td><Link to={`/image/${product.id}`}>View Product</Link></td>
+      <td>
+        <Link to={`/edit/${product.id}`}>Modify Product</Link>
+        {' | '}
+        <button type="button" onClick={() => { deleteProduct(index); }}>
+          Delete Product
+        </button>
+      </td>
     </tr>
-  );
-}
+  </>
+));
 
-function ProductTable({ products }) {
-  const productRows = products.map(product => <ProductRow key={product.id} product={product} />);
+function ProductTable({ products, deleteProduct }) {
+  const productRows = products.map((product, index) => (
+    <ProductRow
+      key={product.id}
+      product={product}
+      deleteProduct={deleteProduct}
+      index={index}
+    />
+  ));
 
   return (
     <table className="bordered-table">
@@ -23,10 +37,11 @@ function ProductTable({ products }) {
           <th>Price</th>
           <th>Category</th>
           <th>Image</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        {productRows.length > 0 ? productRows : <tr><td colSpan="4">No records to display</td></tr>}
+        {productRows.length > 0 ? productRows : <tr><td colSpan="5">No records to display</td></tr>}
       </tbody>
     </table>
   );

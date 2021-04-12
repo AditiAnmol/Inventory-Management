@@ -62,7 +62,7 @@ class ProductAdd extends React.Component {
             </tr>
             <tr>
               <td><input type="text" name="productname" placeholder="Product Name" className="inputs" /></td>
-              <td><input type="text" name="productimage" placeholder="Image URL" className="inputs" /></td>
+              <td><input type="url" name="productimage" placeholder="Image URL" className="inputs" /></td>
             </tr>
           </tbody>
         </table>

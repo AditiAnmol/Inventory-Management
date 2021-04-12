@@ -15,4 +15,38 @@ async function list() {
   return products;
 }
 
-module.exports = { add, list };
+async function get(_, { id }) {
+  const db = getDb();
+  const product = await db.collection('products').findOne({ id });
+  return product;
+}
+
+async function update(_, { id, changes }) {
+  const db = getDb();
+  if (changes.title || changes.status || changes.owner) {
+    const product = await db.collection('products').findOne({ id });
+    Object.assign(product, changes);
+  }
+
+  await db.collection('products').updateOne({ id }, { $set: changes });
+  const savedProduct = await db.collection('products').findOne({ id });
+  return savedProduct;
+}
+
+async function remove(_, { id }) {
+  const db = getDb();
+  const product = await db.collection('products').findOne({ id });
+  if (!product) return false;
+  product.deleted = new Date();
+
+  let result = await db.collection('deleted_products').insertOne(product);
+  if (result.insertedId) {
+    result = await db.collection('products').removeOne({ id });
+    return result.deletedCount === 1;
+  }
+  return false;
+}
+
+module.exports = {
+  list, add, get, update, delete: remove,
+};

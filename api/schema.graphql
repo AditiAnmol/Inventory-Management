@@ -22,10 +22,20 @@ input ProductInputs {
   image: String
 }
 
+input ProductUpdateInputs {
+  category: CategoryType!
+  price: Float
+  name: String!
+  image: String
+}
+
 type Query {
   productList: [Product!]!
+  product(id: Int!): Product!
 }
 
 type Mutation {
   productAdd(product: ProductInputs!): Product!
+  productUpdate(id: Int!, changes: ProductUpdateInputs!): Product!
+  productDelete(id: Int!): Boolean!
 }
