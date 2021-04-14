@@ -22,14 +22,16 @@ async function get(_, { id }) {
 }
 
 async function update(_, { id, changes }) {
+  console.log("changes: ", changes);
   const db = getDb();
-  if (changes.title || changes.status || changes.owner) {
+  if (changes.name || changes.category || changes.price || changes.image) {
     const product = await db.collection('products').findOne({ id });
     Object.assign(product, changes);
   }
 
   await db.collection('products').updateOne({ id }, { $set: changes });
   const savedProduct = await db.collection('products').findOne({ id });
+  console.log("Saved product: ", savedProduct);
   return savedProduct;
 }
 

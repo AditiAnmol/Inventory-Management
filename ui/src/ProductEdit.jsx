@@ -27,9 +27,10 @@ export default class ProductEdit extends React.Component {
     }
   }
 
-  onChange(event, naturalValue) {
+  // Not implemented natural value changes
+  onChange(event) {
     const { name, value: textValue } = event.target;
-    const value = naturalValue === undefined ? textValue : naturalValue;
+    const value = textValue === '' ? null : textValue;
     this.setState(prevState => ({
       product: { ...prevState.product, [name]: value },
     }));
