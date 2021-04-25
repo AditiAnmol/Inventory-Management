@@ -1,23 +1,51 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Glyphicon, Grid, MenuItem, Nav, Navbar, NavDropdown, NavItem, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import Content from './Content.jsx';
 
 const NavBar = () => (
-  <nav>
-    <NavLink exact to="/">
-      Home
-    </NavLink>
-    {' | '}
-    <NavLink to="/products">
-      Product List
-    </NavLink>
-  </nav>
+  <Navbar>
+    <Navbar.Header>
+      <Navbar.Brand>My Company Inventory</Navbar.Brand>
+    </Navbar.Header>
+    <Nav>
+      <LinkContainer exact to="/">
+        <NavItem >Home</NavItem>
+      </LinkContainer>
+      <LinkContainer to="/products">
+        <NavItem >Product List</NavItem>
+      </LinkContainer>
+    </Nav>
+    <Nav pullRight>
+      <NavItem>
+        <OverlayTrigger
+          delayShow={200}
+          placement="left"
+          overlay={<Tooltip id="create-issue">Create Issue</Tooltip>}
+        >
+          <Glyphicon glyph="plus" />
+        </OverlayTrigger>
+      </NavItem>
+    </Nav>
+  </Navbar>
 );
+
+function Footer() {
+  return (
+    <small>
+      <p className="text-center">
+        Copyright &copy; 2021
+      </p>
+    </small>
+  )
+}
 
 const Page = () => (
   <div>
     <NavBar />
-    <Content />
+    <Grid><Content /></Grid>
+    <Footer />
   </div>
 );
 

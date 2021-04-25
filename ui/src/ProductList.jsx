@@ -2,6 +2,7 @@ import React from 'react';
 import ProductAdd from './ProductAdd.jsx';
 import ProductTable from './ProductTable.jsx';
 import graphQLFetch from './graphQLFetch.js';
+import { Panel } from 'react-bootstrap';
 
 class ProductList extends React.Component {
   constructor() {
@@ -69,17 +70,19 @@ class ProductList extends React.Component {
     const { products } = this.state;
     return (
       <React.Fragment>
-        <h1>My Company Inventory</h1>
-        Showing all available products
+        Showing all available product
         <hr />
         <ProductTable
           products={products}
           deleteProduct={this.deleteProduct}
         />
-        <br />
-        Add a new product to inventory
         <hr />
-        <ProductAdd createProduct={this.createProduct} />
+        <Panel>
+          <Panel.Title toggle>Add a new product to inventory</Panel.Title>
+          <Panel.Body collapsible>
+            <ProductAdd createProduct={this.createProduct} />
+          </Panel.Body>
+        </Panel>
       </React.Fragment>
     );
   }

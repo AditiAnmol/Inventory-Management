@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import graphQLFetch from './graphQLFetch.js';
@@ -99,7 +100,7 @@ export default class ProductEdit extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <h3>{`Editing Product with ID: ${id}`}</h3>
-        <table>
+        <Table>
           <tbody>
             <tr>
               <td>Category:</td>
@@ -151,10 +152,10 @@ export default class ProductEdit extends React.Component {
               </td>
             </tr>
             <tr>
-              <td colSpan="2"><button type="submit">Submit</button></td>
+              <td colSpan="2"><Button className="button" type="submit">Submit</Button></td>
             </tr>
           </tbody>
-        </table>
+        </Table>
         <Link to={`/edit/${id - 1}`}>Prev</Link>
         {' | '}
         <Link to={`/edit/${id + 1}`}>Next</Link>

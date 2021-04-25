@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
 
 class ProductAdd extends React.Component {
   constructor() {
@@ -66,7 +67,7 @@ class ProductAdd extends React.Component {
             </tr>
           </tbody>
         </table>
-        <button type="submit">Add Product</button>
+        <Button className="button" type="submit">Add Product</Button>
       </form>
     );
   }

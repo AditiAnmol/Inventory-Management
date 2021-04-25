@@ -1,11 +1,3 @@
-html {
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  background-color: #f8ecf5;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-
 table.bordered-table {
   border-collapse: collapse;
   width: 100%;
@@ -28,7 +20,7 @@ h1 {
   color: #720f5d;
 }
 
-button {
+.button {
   background-color: #941b7a;
   color: white;
   padding: 10px;
@@ -36,7 +28,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 13px;
-  margin: 4px 1px;
+  margin-top: 10px;
   cursor: pointer;
   border: none;
 }
@@ -44,4 +36,14 @@ button {
 .inputs {
 background-color: #f8cbee;
 border-width: 0.1px;
+}
+
+.panel-title a {
+  display: block; 
+  width: 100%; 
+  cursor: pointer;
+}
+
+table.table-hover tr {
+  cursor: pointer;
 }
