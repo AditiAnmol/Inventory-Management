@@ -1,8 +1,8 @@
 import React from 'react';
+import { Panel } from 'react-bootstrap';
 import ProductAdd from './ProductAdd.jsx';
 import ProductTable from './ProductTable.jsx';
 import graphQLFetch from './graphQLFetch.js';
-import { Panel } from 'react-bootstrap';
 
 class ProductList extends React.Component {
   constructor() {

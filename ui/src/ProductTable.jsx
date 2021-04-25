@@ -1,9 +1,13 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Button, Glyphicon, OverlayTrigger, Table, Tooltip } from 'react-bootstrap';
+import {
+  Button, Glyphicon, OverlayTrigger, Table, Tooltip,
+} from 'react-bootstrap';
 
-const ProductRow = withRouter(({ product, deleteProduct, index, location: { search } }) => {
+const ProductRow = withRouter(({
+  product, deleteProduct, index, location: { search },
+}) => {
   const selectLocation = { pathname: `/products /${product.id}`, search };
   const deleteTooltip = (
     <Tooltip id="delete-tooltip" placement="top">Delete</Tooltip>
@@ -49,13 +53,13 @@ const ProductRow = withRouter(({ product, deleteProduct, index, location: { sear
         </td>
       </tr>
     </>
-  )
+  );
 
   return (
     <LinkContainer to={selectLocation}>
       {tableRow}
     </LinkContainer>
-  )
+  );
 });
 
 function ProductTable({ products, deleteProduct }) {

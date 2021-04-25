@@ -1,6 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Glyphicon, Grid, MenuItem, Nav, Navbar, NavDropdown, NavItem, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import {
+  Glyphicon, Grid, Nav, Navbar, NavItem, OverlayTrigger, Tooltip,
+} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Content from './Content.jsx';
 
@@ -11,10 +12,10 @@ const NavBar = () => (
     </Navbar.Header>
     <Nav>
       <LinkContainer exact to="/">
-        <NavItem >Home</NavItem>
+        <NavItem>Home</NavItem>
       </LinkContainer>
       <LinkContainer to="/products">
-        <NavItem >Product List</NavItem>
+        <NavItem>Product List</NavItem>
       </LinkContainer>
     </Nav>
     <Nav pullRight>
@@ -38,7 +39,7 @@ function Footer() {
         Copyright &copy; 2021
       </p>
     </small>
-  )
+  );
 }
 
 const Page = () => (
